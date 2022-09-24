@@ -27,12 +27,12 @@ class PaymentController extends Controller
 
     public function paymentFailed(Request $request)
     {
-        return response()->json(['message' => 'পেমেন্টটি ব্যর্থ হয়েছে! অনুগ্রহ করে যোগাযোগ করুন।'], 200);
+        // return response()->json(['message' => 'পেমেন্টটি ব্যর্থ হয়েছে! অনুগ্রহ করে যোগাযোগ করুন।'], 200);
     }
 
     public function paymentCancel(Request $request)
     {
-        return response()->json(['message' => 'পেমেন্টটি ক্যানসেল করা হয়েছে!'], 200);
+        // return response()->json(['message' => 'পেমেন্টটি ক্যানসেল করা হয়েছে!'], 200);
     }
 
     public function paymentConfirm(Request $request)
