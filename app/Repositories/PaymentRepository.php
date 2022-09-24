@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\User;
-use App\Models\Payment;
+use App\Models\Userpayment;
 use App\Models\Temppayment;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -47,12 +47,12 @@ class PaymentRepository
             
             $temppayment = Temppayment::where('trx_id', $request->mer_txnid)->first();
             // dd($request->all());
-            $payment = new Payment;
+            $payment = new Userpayment;
             $payment->user_id = $temppayment->user_id;
             $payment->card_type = $request->card_type;
             $payment->trx_id = $request->mer_txnid;
             $payment->amount = $request->amount;
-            $payment->coin = $temppayment->count;
+            $payment->coin = $temppayment->coin;
             $payment->store_amount = $request->store_amount;
             $payment->save();
 
@@ -64,7 +64,7 @@ class PaymentRepository
             // } else {
             //     $package_expiry_date = Carbon::now()->addDays($package->numeric_duration)->format('Y-m-d') . ' 23:59:59';
             // }
-            $user->total_coin = $user->total_coin + $temppayment->count;;
+            $user->total_coin = $user->total_coin + $temppayment->coin;
             $user->save();
             // ARO KAAJ THAKTE PARE, JODI FIREBASE EO UPDATE KORA LAAGE
             // dd($payment);
