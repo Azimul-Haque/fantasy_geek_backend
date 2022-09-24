@@ -69,7 +69,7 @@ class PaymentRepository
             // ARO KAAJ THAKTE PARE, JODI FIREBASE EO UPDATE KORA LAAGE
             // dd($payment);
 
-            $temppayment->delete();   
+            $temppayment->delete();
 
             Session::flash('swalsuccess', 'পেমেন্ট সফল হয়েছে। অ্যাপটি ব্যবহার করুন। ধন্যবাদ!');
             // return redirect()->route('index.index');
