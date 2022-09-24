@@ -23,6 +23,7 @@ Route::post('/login', [\App\Http\Controllers\API\UserController::class, 'authori
 Route::post('/users/create', [\App\Http\Controllers\API\UserController::class, 'createUser']);
 Route::post('/users/register/verify', [\App\Http\Controllers\API\UserController::class, 'verifyUser']);
 Route::put('/users/update', [\App\Http\Controllers\API\UserController::class, 'updateUser']);
+Route::get('/users/check/{id}', [\App\Http\Controllers\API\UserController::class, 'checkUser']);
 
 // payments
 Route::post('/payment/temp', [\App\Http\Controllers\API\PaymentController::class, 'tempPayment']);
