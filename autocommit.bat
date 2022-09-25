@@ -1,4 +1,5 @@
 set INTERVAL=20
+
 :loop
 
 git pull
