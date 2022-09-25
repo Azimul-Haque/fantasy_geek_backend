@@ -30,6 +30,7 @@ Route::post('/payment/temp', [\App\Http\Controllers\API\PaymentController::class
 Route::get('/payment/fail', [\App\Http\Controllers\API\PaymentController::class, 'paymentFailed']);
 Route::get('/payment/cancel', [\App\Http\Controllers\API\PaymentController::class, 'paymentCancel']);
 Route::post('/payment/confirm', [\App\Http\Controllers\API\PaymentController::class, 'paymentConfirm']);
+Route::get('/payment/list/{user_id}', [\App\Http\Controllers\API\PaymentController::class, 'paymentList']);
 
 //matches
 Route::get('/matches', [\App\Http\Controllers\API\MatchController::class, 'getMatches']);
