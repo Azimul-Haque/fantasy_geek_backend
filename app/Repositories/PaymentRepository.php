@@ -85,7 +85,7 @@ class PaymentRepository
 
     public function paymentList($user_id)
     {
-        $user = User::findOrFail($request['user_id']);
+        $payments = Userpayment::where('user_id', $user_id)->get();
         
         if($user) {
             $temppayment = new Temppayment;
