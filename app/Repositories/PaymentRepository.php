@@ -83,7 +83,7 @@ class PaymentRepository
         }
     }
 
-    public function paymentList($id)
+    public function paymentList($user_id)
     {
         $user = User::findOrFail($request['user_id']);
         

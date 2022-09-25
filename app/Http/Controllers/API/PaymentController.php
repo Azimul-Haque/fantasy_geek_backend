@@ -46,9 +46,9 @@ class PaymentController extends Controller
         }
     }
 
-    public function paymentList($id)
+    public function paymentList($user_id)
     {
-        $payment = $this->paymentRepository->paymentList($id);
+        $payment = $this->paymentRepository->paymentList($user_id);
         
         if ($payment) {
             return response()->json($payment, 200);
