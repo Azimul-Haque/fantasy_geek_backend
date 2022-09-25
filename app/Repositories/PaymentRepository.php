@@ -91,21 +91,8 @@ class PaymentRepository
             return [
                 'success' => true,
                 'payments' => $payments,
-                'message' => 'লগইন সফল হয়েছে!',
+                'message' => 'পাওয়া গেছে',
             ];
-        }
-        
-        if($user) {
-            $temppayment = new Temppayment;
-            $temppayment->user_id = $user->id;
-            $temppayment->trx_id = $request['trx_id'];
-            $temppayment->amount = $request['amount'];
-            $temppayment->coin = $request['coin'];
-            $temppayment->save();
-
-            return response()->json([
-                'success' => true
-            ], 200);
         } else {
             return response()->json([
                 'success' => false
