@@ -94,9 +94,9 @@ class PaymentRepository
                 'message' => 'পাওয়া গেছে',
             ];
         } else {
-            return response()->json([
+            return [
                 'success' => false
-            ], 200);
+            ];
         }
     }
 }
