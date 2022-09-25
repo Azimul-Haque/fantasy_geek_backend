@@ -48,7 +48,7 @@ class PaymentController extends Controller
 
     public function paymentList($id)
     {
-        $payment = $this->paymentRepository->paymentConfirm($request);
+        $payment = $this->paymentRepository->paymentList($id);
         
         if ($payment) {
             return response()->json($payment, 200);
