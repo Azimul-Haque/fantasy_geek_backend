@@ -87,7 +87,7 @@ class PaymentRepository
     {
         $payments = Userpayment::where('user_id', $user_id)->get();
 
-        if(payments) {
+        if($payments) {
             return [
                 'success' => true,
                 'payments' => $payments,
