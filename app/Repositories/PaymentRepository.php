@@ -86,6 +86,12 @@ class PaymentRepository
     public function paymentList($user_id)
     {
         $payments = Userpayment::where('user_id', $user_id)->get();
+
+        if(payments) {
+            return response()->json([
+                'success' => true
+            ], 200);
+        }
         
         if($user) {
             $temppayment = new Temppayment;
