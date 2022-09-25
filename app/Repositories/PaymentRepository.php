@@ -82,4 +82,26 @@ class PaymentRepository
             return response()->json(['message' => 'পেমেন্ট সম্পন্ন হয়নি, অনুগ্রহ করে Contact ফর্ম এর মাধ্যমে আমাদের জানান।'], 200);
         }
     }
+
+    public function paymentList($id)
+    {
+        $user = User::findOrFail($request['user_id']);
+        
+        if($user) {
+            $temppayment = new Temppayment;
+            $temppayment->user_id = $user->id;
+            $temppayment->trx_id = $request['trx_id'];
+            $temppayment->amount = $request['amount'];
+            $temppayment->coin = $request['coin'];
+            $temppayment->save();
+
+            return response()->json([
+                'success' => true
+            ], 200);
+        } else {
+            return response()->json([
+                'success' => false
+            ], 200);
+        }
+    }
 }
