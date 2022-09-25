@@ -162,6 +162,9 @@ class UserRepository
         ];
     }
 
+
+    
+
     private function generateOTP($mobile)
     {
         $pool = '0123456789';
