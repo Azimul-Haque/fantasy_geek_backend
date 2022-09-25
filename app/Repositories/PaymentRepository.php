@@ -88,11 +88,11 @@ class PaymentRepository
         $payments = Userpayment::where('user_id', $user_id)->get();
 
         if($payments) {
-            return [
+            return response()->json([
                 'success' => true,
                 'payments' => $payments,
                 'message' => 'পাওয়া গেছে',
-            ];
+            ]);
         } else {
             return response()->json([
                 'success' => false
