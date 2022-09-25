@@ -45,4 +45,15 @@ class PaymentController extends Controller
             return response()->json(['message' => 'Server Error'], 401);
         }
     }
+
+    public function paymentList($id)
+    {
+        $payment = $this->paymentRepository->paymentConfirm($request);
+        
+        if ($payment) {
+            return response()->json($payment, 200);
+        } else {
+            return response()->json(['message' => 'Server Error'], 401);
+        }
+    }
 }
