@@ -158,12 +158,9 @@ class UserRepository
         return [
             'success' => true,
             'user' => $user,
-            'message' => 'পাওয়া গেছে',
+            'message' => 'লেনদেন সফল হয়েছে ও কয়েন সংখ্যা বৃদ্ধি করা হয়েছে!',
         ];
     }
-
-
-    
 
     private function generateOTP($mobile)
     {
